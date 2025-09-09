@@ -1,0 +1,617 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* Reset and base styles  */
+* {
+  padding: 0px;
+  margin: 0px;
+  border: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Links */
+a, a:link, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* Common */
+aside, nav, footer, header, section, main {
+  display: block;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+ul, ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+img, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+address {
+  font-style: normal;
+}
+
+/* Form */
+input, textarea, button, select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button, input[type=submit] {
+  display: inline-block;
+  box-shadow: none;
+  background-color: transparent;
+  background: none;
+  cursor: pointer;
+}
+
+input:focus, input:active,
+button:focus, button:active {
+  outline: none;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+label {
+  cursor: pointer;
+}
+
+legend {
+  display: block;
+}
+
+input[type=file] {
+  max-width: 100%;
+}
+
+body {
+  background: rgb(19, 21, 55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 48px;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  position: relative;
+}
+body main {
+  max-width: 800px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body main header {
+  max-width: 700px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 32px;
+  border: solid 3px white;
+  border-radius: 15px;
+  align-items: center;
+}
+body main header h2 {
+  color: white;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 32px;
+  text-transform: uppercase;
+}
+body main header .score {
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 48px;
+  flex-direction: column;
+  background: white;
+  border-radius: 8px;
+}
+body main header .score p {
+  color: rgb(42, 69, 194);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+}
+body main header .score h1 {
+  color: rgb(86, 84, 104);
+  font-size: 64px;
+  font-weight: 700;
+}
+body main .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 72px;
+}
+body main .wrapper .game-icons {
+  max-width: 520px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 40px;
+  -moz-column-gap: 27px;
+       column-gap: 27px;
+  position: relative;
+  margin: 0 auto;
+}
+body main .wrapper .game-icons .img-game-icons {
+  border: solid rgba(128, 128, 128, 0) 20px;
+  border-radius: 100%;
+  z-index: 4;
+}
+body main .wrapper .game-icons .img-game-icons:hover {
+  border: solid rgba(128, 128, 128, 0.151) 20px;
+}
+body main .wrapper .game-icons .img-game-icons:active {
+  transform: translateY(4px);
+}
+body main .wrapper .game-icons .active-icons {
+  border: solid rgba(128, 128, 128, 0.151) 20px;
+}
+body main .wrapper .game-icons .tringle {
+  position: absolute;
+  top: 100px;
+}
+body main .wrapper .next-icons .img-next-icons {
+  display: flex;
+  flex-direction: column;
+  row-gap: 60px;
+  align-items: center;
+}
+body main .wrapper .next-icons .img-next-icons h2 {
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 3px;
+}
+body main .wrapper .win-or-lose {
+  max-width: 220px;
+  animation-name: winnerAnimation;
+  animation-duration: 0.5s;
+}
+body main .wrapper .win-or-lose h1 {
+  font-size: 56px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 16px;
+}
+body main .wrapper .win-or-lose .play-again {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  color: rgb(59, 66, 98);
+  background: white;
+  padding: 15px 0px;
+  width: 100%;
+  border-radius: 8px;
+}
+body main .wrapper .win-or-lose .play-again:hover {
+  color: rgb(219, 46, 77);
+}
+body main .wrapper .computer-choice .computer-icons {
+  display: flex;
+  flex-direction: column;
+  row-gap: 60px;
+  align-items: center;
+}
+body main .wrapper .computer-choice .computer-icons h2 {
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 3px;
+}
+body main .wrapper .computer-choice .circle-div {
+  display: flex;
+  flex-direction: column;
+  row-gap: 60px;
+  align-items: center;
+}
+body main .wrapper .computer-choice .circle-div h2 {
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 3px;
+}
+body main .wrapper .computer-choice .circle-div .cicrle {
+  width: 224px;
+  height: 224px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.1);
+}
+body main .buttons-div {
+  width: 100%;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+body main .buttons-div .play-btn {
+  background: inherit;
+  border: solid white 1px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 36px;
+  border-radius: 8px;
+  transition: 0.2s;
+  margin-top: 30px;
+}
+body main .buttons-div .play-btn:hover {
+  background: white;
+  color: inherit;
+}
+body main .buttons-div .play-btn:active {
+  transform: translate(0px, 4px);
+}
+body main .buttons-div .rules-btn {
+  background: inherit;
+  border: solid white 1px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 36px;
+  border-radius: 8px;
+  transition: 0.2s;
+  margin-top: 30px;
+}
+body main .buttons-div .rules-btn:hover {
+  background: white;
+  color: inherit;
+}
+body main .buttons-div .rules-btn:active {
+  transform: translate(0px, 4px);
+}
+body .modal-rules {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.219);
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .modal-rules .center-div {
+  max-width: 400px;
+  width: 100%;
+  background-color: white;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+}
+body .modal-rules .center-div .back-div {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 48px;
+  align-items: center;
+}
+body .modal-rules .center-div .back-div h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: rgb(59, 66, 98);
+}
+body .modal-rules .center-div .back-div svg {
+  width: 27px;
+  height: 27px;
+  padding: 4px;
+  transition: 0.2s;
+}
+body .modal-rules .center-div .back-div svg:hover {
+  background-color: rgb(255, 72, 72);
+}
+body .modal-rules .center-div .back-div svg:hover path {
+  opacity: 100%;
+  fill: rgb(255, 255, 255);
+}
+body .modal-rules .center-div .back-div svg:active {
+  transform: translateY(4px);
+}
+
+.hide {
+  display: none !important;
+}
+
+.btn {
+  transition: 0.2s;
+}
+.btn:active {
+  transform: translateY(4px) !important;
+}
+
+@keyframes winnerAnimation {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@media (max-width: 840px) {
+  body {
+    background: rgb(19, 21, 55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 48px;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    position: relative;
+  }
+  body main {
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 32px 56px;
+  }
+  body main header {
+    max-width: 700px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    border: solid 3px white;
+    border-radius: 15px;
+    align-items: center;
+    margin-bottom: 105px;
+  }
+  body main header h2 {
+    color: white;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: uppercase;
+  }
+  body main header .score {
+    max-width: 90px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 22px;
+    flex-direction: column;
+    background: white;
+    border-radius: 4px;
+  }
+  body main header .score p {
+    color: rgb(42, 69, 194);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.56px;
+  }
+  body main header .score h1 {
+    color: rgb(86, 84, 104);
+    font-size: 40px;
+    font-weight: 700;
+  }
+  body main .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 72px;
+  }
+  body main .wrapper .game-icons {
+    max-width: 520px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 40px;
+    -moz-column-gap: 27px;
+         column-gap: 27px;
+    position: relative;
+    margin: 0 auto;
+  }
+  body main .wrapper .game-icons .img-game-icons {
+    border: solid rgba(128, 128, 128, 0) 20px;
+    border-radius: 100%;
+    z-index: 4;
+    max-width: 130px;
+  }
+  body main .wrapper .game-icons .img-game-icons:hover {
+    border: solid rgba(128, 128, 128, 0.151) 20px;
+  }
+  body main .wrapper .game-icons .img-game-icons:active {
+    transform: translateY(4px);
+  }
+  body main .wrapper .game-icons .active-icons {
+    border: solid rgba(128, 128, 128, 0.151) 20px;
+  }
+  body main .wrapper .game-icons .tringle {
+    position: absolute;
+    top: 50px;
+    max-width: 166px;
+  }
+  body main .wrapper .next-icons .img-next-icons {
+    display: flex;
+    flex-direction: column;
+    row-gap: 60px;
+    align-items: center;
+  }
+  body main .wrapper .next-icons .img-next-icons h2 {
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: 3px;
+  }
+  body main .wrapper .win-or-lose {
+    max-width: 220px;
+    animation-name: winnerAnimation;
+    animation-duration: 0.5s;
+  }
+  body main .wrapper .win-or-lose h1 {
+    font-size: 56px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 16px;
+  }
+  body main .wrapper .win-or-lose .play-again {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    color: rgb(59, 66, 98);
+    background: white;
+    padding: 15px 0px;
+    width: 100%;
+    border-radius: 8px;
+  }
+  body main .wrapper .win-or-lose .play-again:hover {
+    color: rgb(219, 46, 77);
+  }
+  body main .wrapper .computer-choice .computer-icons {
+    display: flex;
+    flex-direction: column;
+    row-gap: 60px;
+    align-items: center;
+  }
+  body main .wrapper .computer-choice .computer-icons h2 {
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: 3px;
+  }
+  body main .wrapper .computer-choice .circle-div {
+    display: flex;
+    flex-direction: column;
+    row-gap: 60px;
+    align-items: center;
+  }
+  body main .wrapper .computer-choice .circle-div h2 {
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: 3px;
+  }
+  body main .wrapper .computer-choice .circle-div .cicrle {
+    width: 224px;
+    height: 224px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.1);
+  }
+  body main .buttons-div {
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  body main .buttons-div .play-btn {
+    background: inherit;
+    border: solid white 1px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px 36px;
+    border-radius: 8px;
+    transition: 0.2s;
+    margin-top: 30px;
+  }
+  body main .buttons-div .play-btn:hover {
+    background: white;
+    color: inherit;
+  }
+  body main .buttons-div .play-btn:active {
+    transform: translate(0px, 4px);
+  }
+  body main .buttons-div .rules-btn {
+    background: inherit;
+    border: solid white 1px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px 36px;
+    border-radius: 8px;
+    transition: 0.2s;
+    margin-top: 30px;
+  }
+  body main .buttons-div .rules-btn:hover {
+    background: white;
+    color: inherit;
+  }
+  body main .buttons-div .rules-btn:active {
+    transform: translate(0px, 4px);
+  }
+  body .modal-rules {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.219);
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  body .modal-rules .center-div {
+    max-width: 400px;
+    width: 100%;
+    background-color: white;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+  }
+  body .modal-rules .center-div .back-div {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 48px;
+    align-items: center;
+  }
+  body .modal-rules .center-div .back-div h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: rgb(59, 66, 98);
+  }
+  body .modal-rules .center-div .back-div svg {
+    width: 27px;
+    height: 27px;
+    padding: 4px;
+    transition: 0.2s;
+  }
+  body .modal-rules .center-div .back-div svg:hover {
+    background-color: rgb(255, 72, 72);
+  }
+  body .modal-rules .center-div .back-div svg:hover path {
+    opacity: 100%;
+    fill: rgb(255, 255, 255);
+  }
+  body .modal-rules .center-div .back-div svg:active {
+    transform: translateY(4px);
+  }
+}/*# sourceMappingURL=style.css.map */

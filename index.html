@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./scss/style.css">
+</head>
+
+<body>
+    <main>
+        <header>
+            <h2>Rock <br> paper <br> scissors</h2>
+            <div class="score">
+                <p>score</p>
+                <h1 class="your-score">0</h1>
+            </div>
+        </header>
+        <section class="wrapper">
+            <section class="game-icons">
+                <div class="img-game-icons paper"><img src="./img/paper.png" alt="paper hand"></div>
+                <div class="img-game-icons scissor"><img src="./img/scissor.png" alt="scissor hand"></div>
+                <div class="img-game-icons rock"><img src="./img/rock.png" alt="rock hand"></div>
+                <div class="tringle"><img src="./img/triangle.png" alt="tringle path"></div>
+            </section>
+            <section class="next-icons">
+                <div class="img-next-icons paper hide">
+                    <h2>Your picked</h2>
+                    <img src="./img/paper.png" alt="">
+                </div>
+                <div class="img-next-icons scissor hide">
+                    <h2>Your picked</h2>
+                    <img src="./img/scissor.png" alt="">
+                </div>
+                <div class="img-next-icons rock hide">
+                    <h2>Your picked</h2>
+                    <img src="./img/rock.png" alt="">
+                </div>
+            </section>
+            <section class="win-or-lose hide">
+                <!-- <h1 class="win ">YOU WIN</h1>
+                <h1 class="lose hide">YOU LOSE</h1> -->
+                <h1 class="draw "></h1>
+                <button class="btn play-again">PLAY AGAIN</button>
+            </section>
+            <section class="computer-choice">
+                <div class="circle-div hide">
+                    <h2>The house picked</h2>
+                    <div class="cicrle "></div>
+                </div>
+                <div class="computer-icons paper hide">
+                    <h2>The house picked</h2>
+                    <img src="./img/paper.png" alt="">
+                </div>
+                <div class="computer-icons scissor hide">
+                    <h2>The house picked</h2>
+                    <img src="./img/scissor.png" alt="">
+                </div>
+                <div class="computer-icons rock hide">
+                    <h2>The house picked</h2>
+                    <img src="./img/rock.png" alt="">
+                </div>
+            </section>
+        </section>
+        <div class="buttons-div">
+            <button class="btn rules-btn">RULES</button>
+            <button class="btn play-btn">PLAY</button>
+        </div>
+    </main>
+    <section class="modal-rules hide">
+        <div class="center-div">
+            <div class="back-div">
+                <h2>RULES</h2>
+                <button class="back-modal">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path id="Combined Shape" opacity="0.25" fill-rule="evenodd" clip-rule="evenodd"
+                            d="M19.0919 2.12132L16.9706 0L9.54594 7.42462L2.12132 0L0 2.12132L7.42462 9.54594L0 16.9706L2.12132 19.0919L9.54594 11.6673L16.9706 19.0919L19.0919 16.9706L11.6673 9.54594L19.0919 2.12132Z"
+                            fill="#3B4262" />
+                    </svg>
+                </button>
+            </div>
+            <img src="./img/rules-picture.png" alt="rules of paper rock scisser">
+        </div>
+    </section>
+    <script src="./script.js"></script>
+</body>
+
+</html>
